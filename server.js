@@ -87,7 +87,7 @@ async function createServer(root = __dirname, isProd = process.env.NODE_ENV === 
             let render;
             // if server only or not
             let template = fs.readFileSync(resolve(`${serveApiOnly ? 'views/api.ejs' : 'index.html'}`), "utf-8");
-            if (!isProd) {
+            if (!isProd && process.env.NODE_ENV) {
                 // always read fresh template in dev
                 template = await vite.transformIndexHtml(url, template);
                 // if server only, we don't load the react stuff

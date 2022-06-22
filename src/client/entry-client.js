@@ -22,15 +22,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const jsx_runtime_1 = require("react/jsx-runtime");
 const react_1 = __importStar(require("react"));
 // For client createRoot or hydrateRoot
 const ReactDOMClient = __importStar(require("react-dom/client"));
-const App_1 = __importDefault(require("@app/App"));
+const App = react_1.default.lazy(() => Promise.resolve().then(() => __importStar(require("@app/App"))));
 require("./i18n");
 const dRoot = document.querySelector("#app");
 // 👇️ IMPORTANT: use correct ID of your root element
@@ -40,6 +37,6 @@ if (dRoot) {
     const root = ReactDOMClient.createRoot(dRoot);
     // 👇️ if you use TypeScript, add non-null (!) assertion operator
     // const root = createRoot(rootElement!);
-    root.render((0, jsx_runtime_1.jsx)(react_1.default.StrictMode, { children: (0, jsx_runtime_1.jsx)(react_1.Suspense, { fallback: (0, jsx_runtime_1.jsx)("div", { children: "Loading..." }), children: (0, jsx_runtime_1.jsx)(App_1.default, {}) }) }));
+    root.render((0, jsx_runtime_1.jsx)(react_1.default.StrictMode, { children: (0, jsx_runtime_1.jsx)(react_1.Suspense, { fallback: (0, jsx_runtime_1.jsx)("div", { children: "Loading..." }), children: (0, jsx_runtime_1.jsx)(App, {}) }) }));
 }
 //# sourceMappingURL=entry-client.js.map
