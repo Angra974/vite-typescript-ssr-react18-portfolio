@@ -24,6 +24,7 @@
     "build:serve": "cross-env NODE_ENV=production vite-node dist/server.js",
     "serve:local": "vite serve",
 	"predeploy": "pnpm build",
+	"postinstall": "pnpm build",
     "deploy": "gh-pages -d dist",
     "clean": "rimraf dist/*",
     "format": "prettier --write .",
