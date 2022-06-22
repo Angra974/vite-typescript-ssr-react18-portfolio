@@ -100,11 +100,14 @@ async function createServer(root = __dirname, isProd = process.env.NODE_ENV === 
 	  let serveApiOnly = process.env.NODE_ENGINE === 'api'
 
       let render;
+	  // if server only or not
       let template = fs.readFileSync(resolve(`${serveApiOnly ? 'views/api.ejs' : 'index.html'}`), "utf-8");
 	  
       if (!isProd) {
         // always read fresh template in dev
         template = await vite.transformIndexHtml(url, template);
+		
+		// if server only, we don't load the react stuff
         render = (await vite.ssrLoadModule(resolve(`./src/client/entry-${serveApiOnly ? 'empty' : 'server'}.tsx`))).render;
       } else {
         render = require(resolve("./server/entry-server.js")).render;
@@ -115,8 +118,6 @@ async function createServer(root = __dirname, isProd = process.env.NODE_ENV === 
       const appHtml = serveApiOnly ? '<div style="margin: 10% auto;width: 40%;font-size: 30px;">Welcome to our api</div>' : render(url, context);
 
       const html = template.replace(`<!--app-html-->`, appHtml);
-		
-	//  console.log(url);
 		
 		res.status(200).set({ "Content-Type": 'text/html' }).end(html);
 			

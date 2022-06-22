@@ -1,14 +1,15 @@
 {
   "name": "vite-typescript-ssr-react",
   "version": "1.0.0",
-  "description": "Boilerplate for a modern web stack",
+  "description": "Boilerplate for a modern web stack with a portfolio inside.",
+   "homepage": "https://github.com/Angra974/vite-typescript-ssr-react18-portfolio/",
   "repository": {
     "type": "git",
     "url": "https://github.com/Angra974/vite-typescript-ssr-react18"
   },
   "author": "Thierry Parlier",
-  "original author": "JonLuca DeCaro",
-  "original url": "https://github.com/jonluca/vite-typescript-ssr-react",
+  "Ssr boilerplate original author": "JonLuca DeCaro",
+  "Ssr boilerplate original url": "https://github.com/jonluca/vite-typescript-ssr-react",
   "license": "MIT",
   "scripts": {
     "dev:api": "cross-env NODE_ENV=development NODE_ENGINE=api NODE_HOST=localhost NODE_PORT=7456 vite-node server.ts -w",
@@ -22,6 +23,8 @@
     "serve": "pnpm build && cross-env NODE_ENV=production vite-node dist/server.js",
     "build:serve": "cross-env NODE_ENV=production vite-node dist/server.js",
     "serve:local": "vite serve",
+	"predeploy": "pnpm build",
+    "deploy": "gh-pages -d dist",
     "clean": "rimraf dist/*",
     "format": "prettier --write .",
     "test": "pnpm format && tsc && prettier --check . && eslint .",
@@ -34,6 +37,7 @@
     "compression": "1.7.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "express": "4.18.1",
+    "gh-pages": "^4.0.0",
     "i18next": "^21.8.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

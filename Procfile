@@ -1,0 +1,1 @@
+web: cross-env NODE_ENV=production node --experimental-modules --experimental-specifier-resolution=node dist/server.js

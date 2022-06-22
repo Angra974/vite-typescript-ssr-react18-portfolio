@@ -8,11 +8,11 @@ interface ComponentProps {
   props: tagPropsType;
 }
 
-const ImageContainer: FC<ComponentProps> = ({ as: Tag = "div", tagProps, props }) => {
+const ImageContainer: FC<ComponentProps> = ({ as: Tag = "div", tagProps, props}) => {
   return (
     <>
       <Tag {...tagProps}>
-        <img {...props} />
+  <img {...props} decoding="async" />
       </Tag>
     </>
   );

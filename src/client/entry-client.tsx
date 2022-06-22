@@ -2,7 +2,8 @@ import React, { Suspense } from "react";
 // For client createRoot or hydrateRoot
 import * as ReactDOMClient from "react-dom/client";
 
-import App from "@app/App";
+
+const App = React.lazy(() => import("@app/App"));
 import "./i18n";
 
 const dRoot = document.querySelector("#app");
