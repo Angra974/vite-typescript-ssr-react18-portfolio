@@ -1,1 +1,1 @@
-web: npx vite-node server.ts -w
+web: node docs/server.js
