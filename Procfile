@@ -1,1 +1,1 @@
-web: node dist/server.js
+web: npx vite-node server.ts -w
