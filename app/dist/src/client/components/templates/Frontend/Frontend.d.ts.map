@@ -1,1 +1,0 @@
-{"version":3,"file":"Frontend.d.ts","sourceRoot":"","sources":["../../../../../../src/client/components/templates/Frontend/Frontend.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,EAAE,EAAE,EAAE,MAAM,OAAO,CAAC;AAGlC,aAAK,aAAa,GAAG;IACnB,QAAQ,EAAE,KAAK,CAAC,SAAS,CAAC;CAC3B,CAAC;AAEF,QAAA,MAAM,QAAQ,EAAC,EAAE,CAAC,aAAa,CAE9B,CAAC;AAEF,eAAe,QAAQ,CAAC"}
