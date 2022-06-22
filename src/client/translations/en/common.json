@@ -1,0 +1,58 @@
+{
+		"portfolio": {
+			"menu": {
+				"home": "Home",
+				"about": "About",
+				"contact": "Contact",
+				"portfolio": "Portfolio",
+				"blog": "Blog"
+			},
+			"sections": {
+				"portfolio": {
+					"title": ["My","Projects"],
+					"subtitle": "My work",
+					"text": "Here is some of my work that I've done in various programming languages.",
+					"headerItem": "Project source"
+				},
+				"home": {
+				  "hi": "Hi, i'm a",
+				  "name": "Solano Milan Diaz.",
+				  "role": "A Web Developer.",
+				  "description": "I'm a Web Developer, I love to create beautiful and functional websites. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, libero? Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque blanditiis sed aut!",
+				  "download": "Download CV"			
+				},
+				"about": {
+					  "title": ["About", "Me"],
+					  "subtitle": "My Stats",
+					  "information": "Information About me",
+					  "description1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet labore nihil obcaecati consequatur. Debitis error doloremque, vero eos vel nemo eius voluptatem dicta tenetur modi.",
+					  "description2": "La musica delectus dolore fugiat exercitationem a, ipsum quidem quo enim natus accusamus labore dolores nam. Unde. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum non necessitatibus deleniti eum soluta.",
+					  "download": "Download CV",
+					  "skills": "My Skills",
+					  "timeline": "My Timeline"
+				},
+				"blog": {
+				  "title": ["My", "Blog"],
+				  "subtitle": "My articles"
+				},
+				"contact": {
+					  "title": ["Contact", "Me"],
+					  "subtitle": "Contact",
+					  "information": "Information About me",
+					  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet labore nihil obcaecati consequatur. Debitis error doloremque, vero eos vel nemo eius voluptatem dicta tenetur modi.",
+					  "label_name": "Name",
+					  "label_email": "Email",
+					  "label_subject": "Subject",
+					  "text_placeholder": "Message here...",
+					  "submit": "submit"
+					},
+				"error": {
+				  "title": ["Error", "404"],
+				  "subtitle": "Your error!",
+				  "error_page": "Opps, something went wrong!"
+				}					
+			}
+		},
+		"downloadCv": "Download Cv" 
+
+}

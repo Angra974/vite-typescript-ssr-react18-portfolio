@@ -1,0 +1,158 @@
+@use "../../../../stylesheets/abstracts/" as *;
+
+.contact {
+  @include flex-it(center, center, column);
+}
+
+.contact-container {
+  margin: 0 auto;
+
+  @include mq("max", "tablet-wide") {
+    width: 500px;
+  }
+
+  @include mq("min", "tablet-wide") {
+    width: 100%;
+  }
+  @include mq("min", "desktop") {
+    width: 1024px;
+  }
+}
+
+//Contact section
+.contact-content-con {
+  display: flex;
+  padding-top: 3.5rem;
+  @include mq("max", "tablet-wide") {
+    flex-direction: column;
+  }
+  .left-contact {
+    flex: 2;
+    margin-right: 1rem;
+    h4 {
+      margin-top: 1rem;
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+    p {
+      margin: 1rem 0;
+      line-height: 2rem;
+    }
+
+    .contact-info {
+      max-width: 450px;
+      .contact-item {
+        @include flex-it(space-between);
+
+        p {
+          margin: 0.3rem 0 !important;
+          padding: 0 !important;
+          &::before {
+            content: ": ";
+          }
+        }
+
+        .icon {
+          display: grid;
+          grid-template-columns: 40px 1fr;
+          i {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+    .contact-icons {
+      @include flex-it();
+      .contact-icon {
+        display: flex;
+        margin-top: 2rem;
+        a {
+          @include flex-it();
+          color: var(--color-white);
+          background-color: var(--color-grey-5);
+          cursor: pointer;
+          @include size(50px);
+          @include borderRadius(50px);
+          margin: 0 0.4rem;
+          transition: all 0.4s ease-in-out;
+          &:hover {
+            background-color: var(--color-secondary);
+            i {
+              color: var(--color-primary);
+            }
+          }
+          i {
+            @include flex-it();
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+
+  .right-contact {
+    min-width: 320px;
+    max-width: 500px;
+    .input-control {
+      margin: 1.5rem 0;
+      input,
+      textarea {
+        @include borderRadius(30px);
+        font-weight: inherit;
+        font-size: inherit;
+        font-family: inherit;
+        padding: 0.8rem 1.1rem;
+        outline: none;
+        border: none;
+        background-color: var(--color-grey-5);
+        width: 100%;
+        color: var(--color-white);
+        resize: none;
+      }
+    }
+    .i-c-2 {
+      display: flex;
+      :last-child {
+        margin-left: 1.5rem;
+      }
+    }
+    .submit-btn {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .floating-label-input {
+      width: 100%;
+    }
+    button {
+      @include button(5px 10px, 2rem, 10px, var(--color-primary), var(--color-secondary));
+      border-color: 1px solid var(--color-primary);
+    }
+  }
+}
+
+.contact-item {
+  p {
+    @include mq("max", "tablet-small") {
+      font-size: 15px;
+      color: var(--color-grey-2);
+    }
+  }
+  span {
+    @include mq("max", "tablet-small") {
+      font-size: 15px;
+    }
+  }
+
+  .icon {
+    @include mq("max", "tablet-small") {
+      grid-template-columns: 25px 1fr;
+    }
+  }
+  @include mq("max", "tablet-small") {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+}

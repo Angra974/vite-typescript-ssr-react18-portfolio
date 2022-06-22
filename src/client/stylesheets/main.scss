@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+// 1. Configuration and helpers
+@use "abstracts" as *;
+
+// 2. Base stuff
+@use "base" as *;
+
+// 3. Base stuff
+@use "others" as *;
+
+// 4. Components
+@use "components" as *;
+
+// 5. Layout-related sections
+@use "layout" as *;
+
+// 6. Vendors
+@use "vendors" as *;
+
+// 7. Page-specific styles
+@use "pages" as *;
+
+// 8. Themes
+@use "themes" as *;
+
+/*********************/
+/***Current Project***/
+/*********************/
+// 8. Current
+
+:root {
+  --color-primary: #191d2b;
+  --color-secondary: #27ae60;
+  --color-white: #ffffff;
+  --color-black: #000;
+  --color-grey0: #f8f8f8;
+  --color-grey-1: #dbe1e8;
+  --color-grey-2: #b2becd;
+  --color-grey-3: #6c7983;
+  --color-grey-4: #454e56;
+  --color-grey-5: #2a2e35;
+  --color-grey-6: #12181b;
+  --br-sm-2: 14px;
+  --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+.light-mode {
+  --color-primary: #ffffff;
+  --color-secondary: #f56692;
+  --color-white: #454e56;
+  --color-black: #000;
+  --color-grey0: #f8f8f8;
+  --color-grey-1: #6c7983;
+  --color-grey-2: #6c7983;
+  --color-grey-3: #6c7983;
+  --color-grey-4: #454e56;
+  --color-grey-5: #f8f8f8;
+  --color-grey-6: #12181b;
+}
+
+.main-nav {
+  ul {
+    @include mq("max", "tablet-small") {
+      display: none;
+    }
+  }
+}
