@@ -1,9 +1,0 @@
-@use "../../../stylesheets/abstracts" as *;
-
-main {
-  position: relative;
-}
-
-.main-nav .is_active {
-  border-bottom: 1px solid var(--color-secondary);
-}
