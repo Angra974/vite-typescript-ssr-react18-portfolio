@@ -13,7 +13,7 @@ exports.default = (0, vite_1.defineConfig)({
     // ...vite configures
     server: {
         // vite server configs, for details see [vite doc](https://vitejs.dev/config/#server-host)
-        port: 7456,
+        port: process.env.PORT ? Number(process.env.PORT) : 7456,
     },
     plugins: [
         ...plugin_common_1.default,
