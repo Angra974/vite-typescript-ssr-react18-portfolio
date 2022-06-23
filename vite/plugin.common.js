@@ -17,7 +17,7 @@ console.log(process.env.NODE_ENV);
     and not be accessible, so i use base url to fix it.
 */
 const htmlBaseUrl = process.env.NODE_ENV !== 'production' ? `${PROTOCOL}://${BASE_HOST}${PORT ? ':' + PORT : ''}` :
-    'https://angra974.github.io/vite-typescript-ssr-react18-portfolio';
+    '/vite-typescript-ssr-react18-portfolio';
 const commonPlugins = [
     // With Data
     (0, vite_plugin_restart_1.default)({
