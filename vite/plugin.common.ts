@@ -7,7 +7,6 @@ const PROTOCOL = process.env.NODE_PROTOCOL || process.env.PROTOCOL || "http";
 const PORT = process.env.NODE_PORT || process.env.PORT || 3000;
 
 //const isDev = import.meta.env.DEV === 'development' ? true : false;
-console.log(process.env.NODE_ENV);
 
 /**
 	We use this line to modify index.html with the ecs plugin.

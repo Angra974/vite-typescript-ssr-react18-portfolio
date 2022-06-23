@@ -3,7 +3,6 @@ import { Application, Request, Response } from "express";
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
-const cors = require('cors')
 const serveStatic = require("serve-static");
 import routes from "./src/server/routes/api";
 
@@ -15,7 +14,7 @@ const Backend = require('i18next-fs-backend');
 const isTest = process.env.NODE_ENV === "test" || !!process.env.VITE_TEST_BUILD;
 
 const app: Application = express();
-app.use(cors);
+
 
 async function createServer(root = __dirname, isProd = process.env.NODE_ENV === "production") {
   const resolve = (p: string) => path.resolve(__dirname, p);
