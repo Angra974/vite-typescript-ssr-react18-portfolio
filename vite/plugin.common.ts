@@ -15,7 +15,8 @@ console.log(process.env.NODE_ENV);
 	when using bad links url. Even if we have an error page, translation will be relative
 	and not be accessible, so i use base url to fix it.
 */
-const htmlBaseUrl = process.env.NODE_ENV !== 'production' ? `${PROTOCOL}://${BASE_HOST}${PORT ? ':' + PORT : ''}` : '/';
+const htmlBaseUrl = process.env.NODE_ENV !== 'production' ? `${PROTOCOL}://${BASE_HOST}${PORT ? ':' + PORT : ''}` : 
+	'/vite-typescript-ssr-react18-portfolio';
 
 
 const commonPlugins = [

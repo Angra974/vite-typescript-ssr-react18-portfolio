@@ -19,7 +19,12 @@ export default defineConfig(configEnv => {
       {
         src: pResolve('./dist/client/*'),
         target: pResolve('./dist/')
-      }
+      },
+	  {
+        src: pResolve('./public/*'),
+        target: pResolve('./dist/')
+      },
+	  
     ])
     
     ],

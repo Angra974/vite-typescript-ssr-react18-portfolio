@@ -3,6 +3,7 @@ import { Application, Request, Response } from "express";
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
+const cors = require('cors')
 const serveStatic = require("serve-static");
 import routes from "./src/server/routes/api";
 
@@ -14,7 +15,7 @@ const Backend = require('i18next-fs-backend');
 const isTest = process.env.NODE_ENV === "test" || !!process.env.VITE_TEST_BUILD;
 
 const app: Application = express();
-
+app.use(cors);
 
 async function createServer(root = __dirname, isProd = process.env.NODE_ENV === "production") {
   const resolve = (p: string) => path.resolve(__dirname, p);
@@ -23,6 +24,7 @@ async function createServer(root = __dirname, isProd = process.env.NODE_ENV === 
 	
 	app.use(requestHandler);
 	app.use(serveStatic(resolve('public')));
+	
 /*
 	i18next
 	 .use(Backend)
@@ -147,7 +149,7 @@ const checkPort = (port: number, app: Application) =>
 	catch error  EADDRINUSE and can let the app working instead
 */
 createServer().then(({ app: Application }) => {
-  const port = process.env.PORT || 7456;
+  const port = process.env.PORT ? Number(process.env.PORT) : 7456;
   checkPort(Number(port), app);
 });
 

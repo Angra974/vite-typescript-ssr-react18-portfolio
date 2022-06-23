@@ -7,6 +7,7 @@ exports.viteNodeApp = void 0;
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
+const cors = require('cors');
 const serveStatic = require("serve-static");
 const api_1 = __importDefault(require("./src/server/routes/api"));
 const i18next = require("i18next");
@@ -14,6 +15,7 @@ const i18nextMiddleware = require('i18next-http-middleware');
 const Backend = require('i18next-fs-backend');
 const isTest = process.env.NODE_ENV === "test" || !!process.env.VITE_TEST_BUILD;
 const app = express();
+app.use(cors);
 async function createServer(root = __dirname, isProd = process.env.NODE_ENV === "production") {
     const resolve = (p) => path.resolve(__dirname, p);
     const requestHandler = serveStatic(resolve("assets"));
@@ -124,7 +126,7 @@ const checkPort = (port, app) => new Promise(resolve => {
     catch error  EADDRINUSE and can let the app working instead
 */
 createServer().then(({ app: Application }) => {
-    const port = process.env.PORT || 7456;
+    const port = process.env.PORT ? Number(process.env.PORT) : 7456;
     checkPort(Number(port), app);
 });
 // export for vite-plugin-node

@@ -20,7 +20,11 @@ exports.default = (0, vite_1.defineConfig)(configEnv => {
                 {
                     src: (0, common_1.pResolve)('./dist/client/*'),
                     target: (0, common_1.pResolve)('./dist/')
-                }
+                },
+                {
+                    src: (0, common_1.pResolve)('./public/*'),
+                    target: (0, common_1.pResolve)('./dist/')
+                },
             ])
         ],
         resolve: path_1.default,
